@@ -5,9 +5,16 @@
   <el-button type="success" round>Success</el-button>
 <!-- 一级路由出口 -->
   <RouterView />
+  <div class="test">
+    sfsfef
+  </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.test{
+  color: #cf4444;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
