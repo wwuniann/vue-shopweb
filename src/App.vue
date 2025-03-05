@@ -4,6 +4,8 @@
 
 <template>
   <el-button type="success" round>Success</el-button>
+<!-- 一级路由出口 -->
+  <RouterView />
 </template>
 
 <style scoped>

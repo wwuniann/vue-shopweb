@@ -1,6 +1,7 @@
 //axios基础的封装
 import axios from "axios";
 
+//配置接口基地址，可配置多个
 const httpInstance = axios.create({
     baseURL:'http://pcapi-xiaotuxian-front-devtest.itheima.net',
     timeout:5000
