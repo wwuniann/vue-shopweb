@@ -2,10 +2,10 @@
 //createWebHistory: 创建history模式的路由
 
 import { createRouter, createWebHistory } from 'vue-router'
-import login from '@/views/login/index.vue'
-import layout from '@/views/layout/index.vue'
-import home from '@/views/home/index.vue'
-import category from '@/views/category/index.vue'
+import Login from '@/views/Login/index.vue'
+import Layout from '@/views/Layout/index.vue'
+import Home from '@/views/Home/index.vue'
+import Category from '@/views/Category/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,22 +13,22 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: layout,
+      component: Layout,
       children: [
         {
           //二级路由地址置空即可同一页面展示
           path: '',
-          component: home
+          component: Home
         },
         {
           path: 'category',
-          component: category
+          component: Category
         }
       ]
     },
     {
       path: '/login',
-      component: login
+      component: Login
     }
   ],
 })

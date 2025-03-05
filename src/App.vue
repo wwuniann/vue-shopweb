@@ -2,12 +2,8 @@
 </script>
 
 <template>
-  <el-button type="success" round>Success</el-button>
 <!-- 一级路由出口 -->
   <RouterView />
-  <div class="test">
-    sfsfef
-  </div>
 </template>
 
 <style scoped lang="scss">
