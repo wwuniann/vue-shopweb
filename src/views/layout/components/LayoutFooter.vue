@@ -24,7 +24,7 @@
           </dl>
           <dl>
             <dt>服务热线</dt>
-            <dd class="hotline">400-0000-000 <small>周一至周日 8:00-18:00</small></dd>
+            <dd class="hotline">400-0088-000 <small>周一至周日 8:00-18:00</small></dd>
           </dl>
         </div>
       </div>
@@ -56,7 +56,7 @@
               <a href="javascript:;">搜索推荐</a>
               <a href="javascript:;">友情链接</a>
             </p>
-            <p>CopyRight © 小兔鲜儿</p>
+            <p>CopyRight © 京西购物</p>
           </div>
         </div>
       </div>
@@ -111,7 +111,6 @@
           font-size: 36px;
           display: block;
           color: #666;
-          padding: 10px 0 10px 0;
         }
   
         &:hover {
@@ -151,7 +150,6 @@
           color: #fff;
           border-radius: 2px;
           background-color: $xtxColor;
-          text-decoration: none;
         }
       }
   
@@ -188,7 +186,6 @@
         line-height: 58px;
         color: #fff;
         font-size: 28px;
-        text-decoration: none;
   
         i {
           font-size: 50px;
@@ -222,7 +219,6 @@
         line-height: 1;
         padding: 0 10px;
         border-right: 1px solid #999;
-        text-decoration: none;
   
         &:last-child {
           border-right: none;

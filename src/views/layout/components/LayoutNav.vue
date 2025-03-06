@@ -7,7 +7,7 @@
     <div class="container">
       <ul>
         <template v-if="true">
-          <li><a href="javascript:;"><i class="iconfont icon-yonghu"></i>周杰伦</a></li>
+          <li><a href="javascript:;"><i class="iconfont icon-yonghu"></i>坤坤</a></li>
           <li>
             <el-popconfirm title="确认退出吗?" confirm-button-text="确认" cancel-button-text="取消">
               <template #reference>
@@ -37,14 +37,12 @@
     height: 53px;
     justify-content: flex-end;
     align-items: center;
-    list-style-type: none;
     li {
       a {
         padding: 0 15px;
         color: #cdcdcd;
         line-height: 1;
         display: inline-block;
-        text-decoration: none;
 
         i {
           font-size: 14px;

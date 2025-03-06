@@ -11,6 +11,10 @@ import router from './router'
 //     console.log(res)
 // })
 
+//引入初始化样式文件
+import '@/styles/common.scss'
+
+
 const app = createApp(App)
 
 app.use(createPinia())
