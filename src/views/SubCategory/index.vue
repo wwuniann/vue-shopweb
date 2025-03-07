@@ -30,6 +30,27 @@ const getGoodList = async() =>{
 }
 onMounted(() => getGoodList())
 
+//tab切换,并接口回调
+const tabChange =() =>{
+  console.log('变化了',reqData.value.sortField)
+  getGoodList()
+  reqData.value.page = 1
+}
+
+//加载更多
+const disabled = ref(false)
+const load =async() =>{
+  console.log('到底了')
+  //获取下一页的数据
+  reqData.value.page++
+  const res = await getSubCategoryAPI(reqData.value)
+  //数据拼接
+  goodList.value = [...goodList.value,...res.result.items]
+  if( res.result.items.length ===0){
+    disabled.value = true
+  }
+}
+
 </script>
 
 <template>
@@ -44,12 +65,12 @@ onMounted(() => getGoodList())
       </el-breadcrumb>
     </div>
     <div class="sub-container">
-      <el-tabs>
+      <el-tabs v-model="reqData.sortField" @tab-change="tabChange">
         <el-tab-pane label="最新商品" name="publishTime"></el-tab-pane>
         <el-tab-pane label="最高人气" name="orderNum"></el-tab-pane>
         <el-tab-pane label="评论最多" name="evaluateNum"></el-tab-pane>
       </el-tabs>
-      <div class="body">
+      <div class="body" v-infinite-scroll="load" :infinite-scroll-disabled="disabled">
          <!-- 商品列表-->
           <GoodsItem v-for="i in goodList" :goods="i" :key="i.id"/>
       </div>
