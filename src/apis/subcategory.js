@@ -8,3 +8,11 @@ export function getCategoryFilerAPI(id){
         }
     })
 }
+
+export function getSubCategoryAPI(data){
+    return httpInstance({
+        url: "/category/goods/temporary",
+        method: 'POST',
+        data
+    })
+}
