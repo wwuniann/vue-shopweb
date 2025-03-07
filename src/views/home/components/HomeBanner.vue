@@ -2,6 +2,7 @@
 import { getBannerAPI } from '@/apis/home';
 import { onMounted, ref } from 'vue';
 
+
 const bannerList = ref([])
 const getBanner = async() =>{
     const res = await getBannerAPI()
