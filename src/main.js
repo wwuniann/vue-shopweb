@@ -24,3 +24,7 @@ app.mount('#app')
 //引入懒加载指令插件并且注册
 import { lazyPlugin } from '@/directives/index'
 app.use(lazyPlugin)
+
+//引入全局组件插件并注册
+import { componentPlugin } from './components'
+app.use(componentPlugin)
