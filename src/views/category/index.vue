@@ -94,7 +94,7 @@ const { bannerList } = useBanner()
           }
 
           &:hover {
-            color: $xtxColor;
+            color: $JxColor;
           }
         }
       }

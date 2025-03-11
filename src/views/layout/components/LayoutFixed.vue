@@ -14,7 +14,7 @@ const { y } = useScroll(window)
     <RouterLink class="logo" to="/" />
     <!-- 导航区域 -->
     <ul class="app-header-nav ">
-        <li class="home" v-for="item in categoryStore.CategoryList" :key="item.id">
+        <li class="home" v-for="item in categoryStore.CategoryList.slice(0,5)" :key="item.id">
         <RouterLink active-class="active" :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
         </li>
     </ul>
@@ -67,7 +67,7 @@ opacity: 0;
     display: flex;
     text-align: center;
     padding-left: 40px;
-    border-left: 2px solid $xtxColor;
+    border-left: 2px solid $JxColor;
 
     a {
     width: 38px;
@@ -76,7 +76,7 @@ opacity: 0;
     line-height: 1;
 
     &:hover {
-        color: $xtxColor;
+        color: $JxColor;
     }
     }
 }
@@ -91,7 +91,7 @@ z-index: 998;
 
 li {
     margin-right: 40px;
-    width: 38px;
+    width: 70px;
     text-align: center;
 
     a {
@@ -101,14 +101,14 @@ li {
     display: inline-block;
 
     &:hover {
-        color: $xtxColor;
-        border-bottom: 1px solid $xtxColor;
+        color: $JxColor;
+        border-bottom: 1px solid $JxColor;
     }
     }
 
     .active {
-    color: $xtxColor;
-    border-bottom: 1px solid $xtxColor;
+    color: $JxColor;
+    border-bottom: 1px solid $JxColor;
     }
 }
 }

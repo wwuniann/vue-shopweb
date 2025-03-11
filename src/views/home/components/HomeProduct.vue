@@ -48,7 +48,7 @@ onMounted(() => getGoods())
       border-radius: 4px;
 
       &:hover {
-        background: $xtxColor;
+        background: $JxColor;
         color: #fff;
       }
 

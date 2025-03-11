@@ -1,18 +1,19 @@
 <script setup>
 import { ref } from 'vue';
-import { loginAPI } from '@/apis/user';
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
 import { useRouter } from 'vue-router';
+import { useUserStore } from '@/stores/user';
 
+const userStore = useUserStore()
 
 //表单校验步骤:按照接口字段准备表单对象并绑定(:model='')--按照产品要求准备规则对象并绑定(:rules='')--指定表单域的校验字段名(prop='')--把表单对象进行双向绑定(v-model)
 
 //准备表单对象
 const form =ref({
-    account:'',
-    password:'',
-    agree:''
+    account:'13012345689',
+    password:'123456',
+    agree:true
 })
 //准备规则对象
 const rules = {
@@ -27,12 +28,13 @@ const rules = {
     //勾选就通过，不勾选不通过
     agree:[
         {
-            validator:(rule,value,callback) =>{
-                if(value){
-                    callback()
-                }else{
-                    callback(new Error('请勾选协议'))
-                }
+            validator:( rule, value, callback) =>{
+               console.log(value)
+               if(value){
+                callback()
+               }else{
+                callback(new Error('请勾选协议'))
+               }
             }
         }
     ]
@@ -49,8 +51,7 @@ const clicklogin = () =>{
         //以valid作为判断条件，如果校验通过就执行登录逻辑
         if(valid){
             //登录逻辑
-            const res = await loginAPI({account,password})
-            console.log(res)
+            await userStore.getUserInfo({account,password})
             //提示用户
             ElMessage({
                 type:'success',message:'登陆成功'
@@ -164,7 +165,7 @@ const clicklogin = () =>{
 
     i {
       font-size: 14px;
-      color: $xtxColor;
+      color: $JxColor;
       letter-spacing: -5px;
     }
   }
@@ -234,7 +235,7 @@ const clicklogin = () =>{
     text-align: right;
 
     a {
-      color: $xtxColor;
+      color: $JxColor;
 
       i {
         font-size: 14px;
@@ -278,7 +279,7 @@ const clicklogin = () =>{
 
           &.active,
           &:focus {
-            border-color: $xtxColor;
+            border-color: $JxColor;
           }
         }
 
@@ -323,7 +324,7 @@ const clicklogin = () =>{
       color: #fff;
       text-align: center;
       line-height: 40px;
-      background: $xtxColor;
+      background: $JxColor;
 
       &.disabled {
         background: #cfcdcd;
@@ -347,7 +348,7 @@ const clicklogin = () =>{
 }
 
 .subBtn {
-  background: $xtxColor;
+  background: $JxColor;
   width: 100%;
   color: #fff;
 }

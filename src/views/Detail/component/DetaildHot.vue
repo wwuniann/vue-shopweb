@@ -33,7 +33,7 @@ onMounted(() => getHotList())
   <div class="goods-hot">
     <h3>{{title}}</h3>
     <!-- 商品区块 -->
-    <RouterLink to="/" class="goods-item" v-for="item in goodList" :key="item.id">
+    <RouterLink to="/" class="goods-item" v-for="item in goodList.slice(0,3)" :key="item.id">
       <img :src="item.picture" alt="" />
       <p class="name ellipsis">{{ goodList.name }}</p>
       <p class="desc ellipsis">{{goodList.desc}}</p>

@@ -3,7 +3,10 @@ import { getDetailAPI } from '@/apis/detail';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import DetaildHot from './component/DetaildHot.vue';
+import { ElMessage } from 'element-plus';
+import { useAddCartStore } from '@/stores/addCart';
 
+const cartStore = useAddCartStore()
 const goods = ref({})
 const route = useRoute()
 const getGoods = async() =>{
@@ -13,8 +16,35 @@ const getGoods = async() =>{
 onMounted(() => getGoods())
 
 //
+let skuState = {}
 const skuChange = (sku) =>{
   console.log(sku)
+  skuState = sku
+}
+
+//数量
+const num = ref(1)
+const handleChange = () => {
+}
+
+//添加购物车
+const addCart = () =>{
+  if(skuState.skuId){
+    //全部选择完，触发action即方法
+    cartStore.addCart({
+      id: goods.value.id,
+      name : goods.value.name,
+      picture: goods.value.mainPictures[0],
+      price:goods.value.price,
+      num: num.value,
+      skuId:skuState.skuId,
+      attrsText: skuState.specsText,
+      slected:true
+    })
+  }else{
+    //没选择完，提示用户
+    ElMessage.warning('请选择规格')
+  }
 }
 
 </script>
@@ -95,10 +125,10 @@ const skuChange = (sku) =>{
               <!-- sku组件 -->
                <JxSku :goods="goods" @change="skuChange"/>
               <!-- 数据组件 -->
-
+              <el-input-number v-model="num" :min="1" :max="10" @change="handleChange" />
               <!-- 按钮组件 -->
               <div>
-                <el-button size="large" class="btn">
+                <el-button size="large" class="btn" @click="addCart">
                   加入购物车
                 </el-button>
               </div>
@@ -251,13 +281,13 @@ const skuChange = (sku) =>{
 
             &::before {
               content: "•";
-              color: $xtxColor;
+              color: $JxColor;
               margin-right: 2px;
             }
           }
 
           a {
-            color: $xtxColor;
+            color: $JxColor;
           }
         }
       }
@@ -299,13 +329,13 @@ const skuChange = (sku) =>{
           margin-top: 10px;
 
           i {
-            color: $xtxColor;
+            color: $JxColor;
             font-size: 14px;
             margin-right: 2px;
           }
 
           &:hover {
-            color: $xtxColor;
+            color: $JxColor;
             cursor: pointer;
           }
         }
