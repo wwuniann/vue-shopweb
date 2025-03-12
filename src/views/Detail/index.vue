@@ -39,8 +39,11 @@ const addCart = () =>{
       num: num.value,
       skuId:skuState.skuId,
       attrsText: skuState.specsText,
-      slected:true
+      slected: true,
     })
+    ElMessage({
+                type:'success',message:'添加成功'
+            })
   }else{
     //没选择完，提示用户
     ElMessage.warning('请选择规格')
