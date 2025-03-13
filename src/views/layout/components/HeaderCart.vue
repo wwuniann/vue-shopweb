@@ -1,6 +1,6 @@
 <script setup>
 import router from '@/router';
-import { useAddCartStore } from '@/stores/addCart';
+import { useAddCartStore } from '@/stores/cartStore';
 
 const cartStore = useAddCartStore()
 </script>
@@ -24,7 +24,7 @@ const cartStore = useAddCartStore()
             </div>
             <div class="right">
               <p class="price">&yen;{{ i.price }}</p>
-              <p class="count">x{{ i.num }}</p>
+              <p class="count">x{{ i.count }}</p>
             </div>
           </RouterLink>
           <i class="iconfont icon-shanchu" @click="cartStore.delCart(i.skuId)"></i>

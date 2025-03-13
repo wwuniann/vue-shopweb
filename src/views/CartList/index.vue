@@ -1,15 +1,15 @@
 <script setup>
-import { useAddCartStore } from '@/stores/addCart';
+import { useAddCartStore } from '@/stores/cartStore';
 
 const cartStore = useAddCartStore()
 
-const singleCheck =(i,slected) =>{
-    console.log(i,slected);
-    cartStore.singleCheck(i.skuId,slected)
+const singleCheck =(i,selected) =>{
+    console.log(i,selected);
+    cartStore.singleCheck(i.skuId,selected)
 }
 
-const allCheck =(slected) =>{
-    cartStore.allCheck(slected)
+const allCheck =(selected) =>{
+    cartStore.allCheck(selected)
 }
 
 </script>
@@ -35,7 +35,7 @@ const allCheck =(slected) =>{
           <tbody>
             <tr v-for="i in cartStore.cartList" :key="i.id">
               <td>
-                <el-checkbox :model-value="i.slected" @change="(slected)=>singleCheck(i,slected)"/>
+                <el-checkbox :model-value="i.selected" @change="(selected)=>singleCheck(i,selected)"/>
               </td>
               <td>
                 <div class="goods">
@@ -51,10 +51,10 @@ const allCheck =(slected) =>{
                 <p>&yen;{{ i.price }}</p>
               </td>
               <td class="tc">
-                <el-input-number v-model="i.num" />
+                <el-input-number v-model="i.count" />
               </td>
               <td class="tc">
-                <p class="f16 red">&yen;{{ (i.price * i.num).toFixed(2) }}</p>
+                <p class="f16 red">&yen;{{ (i.price * i.count).toFixed(2) }}</p>
               </td>
               <td class="tc">
                 <p>

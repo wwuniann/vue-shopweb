@@ -4,7 +4,7 @@ import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import DetaildHot from './component/DetaildHot.vue';
 import { ElMessage } from 'element-plus';
-import { useAddCartStore } from '@/stores/addCart';
+import { useAddCartStore } from '@/stores/cartStore';
 
 const cartStore = useAddCartStore()
 const goods = ref({})
@@ -23,7 +23,7 @@ const skuChange = (sku) =>{
 }
 
 //数量
-const num = ref(1)
+const count = ref(1)
 const handleChange = () => {
 }
 
@@ -36,10 +36,10 @@ const addCart = () =>{
       name : goods.value.name,
       picture: goods.value.mainPictures[0],
       price:goods.value.price,
-      num: num.value,
+      count: count.value,
       skuId:skuState.skuId,
       attrsText: skuState.specsText,
-      slected: true,
+      selected: true,
     })
     ElMessage({
                 type:'success',message:'添加成功'
@@ -128,7 +128,7 @@ const addCart = () =>{
               <!-- sku组件 -->
                <JxSku :goods="goods" @change="skuChange"/>
               <!-- 数据组件 -->
-              <el-input-number v-model="num" :min="1" :max="10" @change="handleChange" />
+              <el-input-number v-model="count" :min="1" :max="10" @change="handleChange" />
               <!-- 按钮组件 -->
               <div>
                 <el-button size="large" class="btn" @click="addCart">
