@@ -4,12 +4,12 @@
       <div class="contact">
         <div class="container">
           <dl>
-            <dt>客户服务</dt>
+            <dt>售后服务</dt>
             <dd><i class="iconfont icon-kefu"></i> 在线客服</dd>
             <dd><i class="iconfont icon-changjianwenti"></i> 问题反馈</dd>
           </dl>
           <dl>
-            <dt>关注我们</dt>
+            <dt>联系我们</dt>
             <dd><i class="iconfont icon-weixin"></i> 公众号</dd>
             <dd><i class="iconfont icon-weibo"></i> 微博</dd>
           </dl>
@@ -52,9 +52,6 @@
               <a href="javascript:;">帮助中心</a>
               <a href="javascript:;">售后服务</a>
               <a href="javascript:;">配送与验收</a>
-              <a href="javascript:;">商务合作</a>
-              <a href="javascript:;">搜索推荐</a>
-              <a href="javascript:;">友情链接</a>
             </p>
             <p>CopyRight © 京西购物</p>
           </div>

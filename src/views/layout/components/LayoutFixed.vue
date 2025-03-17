@@ -20,8 +20,7 @@ const { y } = useScroll(window)
     </ul>
 
     <div class="right">
-        <RouterLink to="/">品牌</RouterLink>
-        <RouterLink to="/">专题</RouterLink>
+        <RouterLink to="/">品牌文化</RouterLink>
     </div>
     </div>
 </div>
@@ -70,7 +69,7 @@ opacity: 0;
     border-left: 2px solid $JxColor;
 
     a {
-    width: 38px;
+    width: 76px;
     margin-right: 40px;
     font-size: 16px;
     line-height: 1;

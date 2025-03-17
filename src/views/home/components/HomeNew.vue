@@ -13,7 +13,7 @@ onMounted( () => getNewList())
 </script>
 
 <template>
-  <HomePanel title="新鲜好物" subtitle="新鲜出炉 品质靠谱">
+  <HomePanel title="精选好物" subtitle="新鲜出炉 品质靠谱">
     <ul class="goods-list">
         <li v-for="item in newList" :key="item.id">
           <RouterLink :to="`/detail/${item.id}`">
@@ -42,12 +42,14 @@ onMounted( () => getNewList())
 <style scoped lang='scss'>
 .goods-list {
   display: flex;
-  justify-content: space-between;
-  height: 406px;
+  padding-left: 0px;
+  gap: 50px;
+  height: 270px;
+  
 
   li {
-    width: 306px;
-    height: 406px;
+    width: 150px;
+    height: 150px;
 
     background: #f0f9f4;
     transition: all .5s;
@@ -58,12 +60,13 @@ onMounted( () => getNewList())
     }
 
     img {
-      width: 306px;
-      height: 306px;
+      width: 150px;
+      height: 150px;
+      
     }
 
     p {
-      font-size: 22px;
+      font-size: 16px;
       padding-top: 12px;
       text-align: center;
       text-overflow: ellipsis;
@@ -76,4 +79,5 @@ onMounted( () => getNewList())
     }
   }
 }
+
 </style>

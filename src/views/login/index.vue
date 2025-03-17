@@ -76,9 +76,8 @@ const clicklogin = () =>{
           <RouterLink to="/">京西购物</RouterLink>
         </h1>
         <RouterLink class="entry" to="/">
-          进入网站首页>
-          <i class="iconfont icon-angle-right"></i>
-          <i class="iconfont icon-angle-right"></i>
+          进入网站首页
+          <i class="iconfont icon-a24gl-enter"></i>
         </RouterLink>
       </div>
     </header>
@@ -116,9 +115,6 @@ const clicklogin = () =>{
           <a href="javascript:;">帮助中心</a>
           <a href="javascript:;">售后服务</a>
           <a href="javascript:;">配送与验收</a>
-          <a href="javascript:;">商务合作</a>
-          <a href="javascript:;">搜索推荐</a>
-          <a href="javascript:;">友情链接</a>
         </p>
         <p>CopyRight &copy; 京西购物</p>
       </div>
@@ -172,7 +168,7 @@ const clicklogin = () =>{
 }
 
 .login-section {
-  background: url('@/assets/images/login-bg.png') no-repeat center / cover;
+  background: url('@/assets/images/login-bg.jpg') no-repeat center / cover;
   height: 488px;
   position: relative;
 
