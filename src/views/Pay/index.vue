@@ -27,7 +27,7 @@ const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redire
 
 
 <template>
-  <div class="xtx-pay-page">
+  <div class="jx-pay-page">
     <div class="container">
       <!-- 付款信息 -->
       <div class="pay-info">
@@ -46,16 +46,7 @@ const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redire
         <p class="head">选择以下支付方式付款</p>
         <div class="item">
           <p>支付平台</p>
-          <a class="btn wx" href="javascript:;"></a>
           <a class="btn alipay" :href="payUrl"></a>
-        </div>
-        <div class="item">
-          <p>支付方式</p>
-          <a class="btn" href="javascript:;">招商银行</a>
-          <a class="btn" href="javascript:;">工商银行</a>
-          <a class="btn" href="javascript:;">建设银行</a>
-          <a class="btn" href="javascript:;">农业银行</a>
-          <a class="btn" href="javascript:;">交通银行</a>
         </div>
       </div>
     </div>
@@ -63,7 +54,7 @@ const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redire
 </template>
 
 <style scoped lang="scss">
-.xtx-pay-page {
+.jx-pay-page {
   margin-top: 20px;
 }
 

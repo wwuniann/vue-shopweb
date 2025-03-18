@@ -1,5 +1,6 @@
 <script setup>
 import { getUserOrderAPI } from '@/apis/order';
+import router from '@/router';
 import { onMounted, ref } from 'vue';
 
 // tab列表
@@ -74,8 +75,6 @@ const formatPayState = (paystate) =>{
               <span>订单编号：{{ order.id }}</span>
               <!-- 未付款，倒计时时间还有 -->
               <span class="down-time" v-if="order.orderState === 1">
-                <i class="iconfont icon-down-time"></i>
-                <b>付款截止: {{order.countdown}}</b>
               </span>
             </div>
             <div class="body">
@@ -117,20 +116,20 @@ const formatPayState = (paystate) =>{
               </div>
               <div class="column action">
                 <el-button  v-if="order.orderState === 1" type="primary"
-                  size="small">
+                  size="small" @click="router.push('/checkout')">
                   立即付款
                 </el-button>
                 <el-button v-if="order.orderState === 3" type="primary" size="small">
                   确认收货
                 </el-button>
-                <p><a href="javascript:;">查看详情</a></p>
+                
                 <p v-if="[2, 3, 4, 5].includes(order.orderState)">
                   <a href="javascript:;">再次购买</a>
                 </p>
                 <p v-if="[4, 5].includes(order.orderState)">
                   <a href="javascript:;">申请售后</a>
                 </p>
-                <p v-if="order.orderState === 1"><a href="javascript:;">取消订单</a></p>
+                
               </div>
             </div>
           </div>
@@ -293,6 +292,7 @@ const formatPayState = (paystate) =>{
       }
 
       &.action {
+        padding-top: 50px;
         width: 140px;
 
         a {

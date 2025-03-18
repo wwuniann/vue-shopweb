@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router';
 import DetaildHot from './component/DetaildHot.vue';
 import { ElMessage } from 'element-plus';
 import { useAddCartStore } from '@/stores/cartStore';
+import router from '@/router';
 
 const cartStore = useAddCartStore()
 const goods = ref({})
@@ -53,7 +54,7 @@ const addCart = () =>{
 </script>
 
 <template>
-  <div class="xtx-goods-page">
+  <div class="jx-goods-page">
     <div class="container" v-if="goods.details">
       <div class="bread-container">
         <el-breadcrumb separator=">">
@@ -81,24 +82,14 @@ const addCart = () =>{
               <!-- 统计数量 -->
               <ul class="goods-sales">
                 <li>
-                  <p>销量人气</p>
+                  <p>销量</p>
                   <p> {{ goods.salesCount}} </p>
-                  <p><i class="iconfont icon-task-filling"></i>销量人气</p>
+                  <p><i class="iconfont icon-renqi"></i>销量</p>
                 </li>
                 <li>
-                  <p>商品评价</p>
-                  <p>{{goods.commentCount}}</p>
-                  <p><i class="iconfont icon-comment-filling"></i>查看评价</p>
-                </li>
-                <li>
-                  <p>收藏人气</p>
-                  <p>{{goods.collectCount}}</p>
-                  <p><i class="iconfont icon-favorite-filling"></i>收藏商品</p>
-                </li>
-                <li>
-                  <p>品牌信息</p>
+                  <p>品牌</p>
                   <p>{{goods.brand.name}}</p>
-                  <p><i class="iconfont icon-dynamic-filling"></i>品牌主页</p>
+                  <p><i class="iconfont icon-pinpai" @click="router.push('/')"></i>品牌</p>
                 </li>
               </ul>
             </div>
@@ -110,21 +101,6 @@ const addCart = () =>{
                 <span>{{goods.oldPrice}}</span>
                 <span> {{goods.price}}</span>
               </p>
-              <div class="g-service">
-                <dl>
-                  <dt>促销</dt>
-                  <dd>12月好物放送，App领券购买直降120元</dd>
-                </dl>
-                <dl>
-                  <dt>服务</dt>
-                  <dd>
-                    <span>无忧退货</span>
-                    <span>快速退款</span>
-                    <span>免费包邮</span>
-                    <a href="javascript:;">了解详情</a>
-                  </dd>
-                </dl>
-              </div>
               <!-- sku组件 -->
                <JxSku :goods="goods" @change="skuChange"/>
               <!-- 数据组件 -->
@@ -172,7 +148,7 @@ const addCart = () =>{
 
 
 <style scoped lang='scss'>
-.xtx-goods-page {
+.jx-goods-page {
   .goods-info {
     min-height: 600px;
     background: #fff;

@@ -23,23 +23,15 @@ onMounted(() => getLikeList())
     </div>
     <div class="item">
       <a href="javascript:;">
-        <span class="iconfont icon-hy"></span>
-        <p>会员中心</p>
-      </a>
-      <a href="javascript:;">
-        <span class="iconfont icon-aq"></span>
-        <p>安全设置</p>
-      </a>
-      <a href="javascript:;">
-        <span class="iconfont icon-dw"></span>
-        <p>地址管理</p>
+        <span class="iconfont icon-gerenxinxi-"></span>
+        <p>个人信息</p>
       </a>
     </div>
   </div>
   <div class="like-container">
     <div class="home-panel">
       <div class="header">
-        <h4 data-v-bcb266e0="">猜你喜欢</h4>
+        <h4 data-v-bcb266e0="">精选好物</h4>
       </div>
       <div class="goods-list">
         <GoodsItem v-for="good in likeList" :key="good.id" :goods="good" />
@@ -51,7 +43,7 @@ onMounted(() => getLikeList())
 <style scoped lang="scss">
 .home-overview {
   height: 132px;
-  background: url(@/assets/images/center-bg.png) no-repeat center / cover;
+  background: url(@/assets/images/center-bg.jpg) no-repeat center / cover;
   display: flex;
 
   .user-meta {
@@ -84,7 +76,7 @@ onMounted(() => getLikeList())
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    
 
     &:first-child {
       border-right: 1px solid #f4f4f4;

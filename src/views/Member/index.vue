@@ -4,7 +4,7 @@
 
 <template>
   <div class="container">
-    <div class="xtx-member-aside">
+    <div class="jx-member-aside">
       <div class="user-manage">
         <h4>我的账户</h4>
         <div class="links">
@@ -28,7 +28,7 @@
   display: flex;
   padding-top: 20px;
 
-  .xtx-member-aside {
+  .jx-member-aside {
     width: 220px;
     margin-right: 20px;
     border-radius: 2px;

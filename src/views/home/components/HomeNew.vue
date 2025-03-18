@@ -13,7 +13,7 @@ onMounted( () => getNewList())
 </script>
 
 <template>
-  <HomePanel title="精选好物" subtitle="新鲜出炉 品质靠谱">
+  <HomePanel title="精选好物" subtitle="快来选购！！！">
     <ul class="goods-list">
         <li v-for="item in newList" :key="item.id">
           <RouterLink :to="`/detail/${item.id}`">

@@ -94,7 +94,7 @@ const addAddress = () => {
 </script>
 
 <template>
-  <div class="xtx-pay-checkout-page">
+  <div class="jx-pay-checkout-page">
     <div class="container">
       <div class="wrapper">
         <!-- 收货地址 -->
@@ -147,20 +147,6 @@ const addAddress = () => {
             </tbody>
           </table>
         </div>
-        <!-- 配送时间
-        <h3 class="box-title">配送时间</h3>
-        <div class="box-body">
-          <a class="my-btn active" href="javascript:;">不限送货时间：周一至周日</a>
-          <a class="my-btn" href="javascript:;">工作日送货：周一至周五</a>
-          <a class="my-btn" href="javascript:;">双休日、假日送货：周六至周日</a>
-        </div>
-        支付方式 -->
-        <!-- <h3 class="box-title">支付方式</h3>
-        <div class="box-body">
-          <a class="my-btn active" href="javascript:;">在线支付</a>
-          <a class="my-btn" href="javascript:;">货到付款</a>
-          <span style="color:#999">货到付款需付5元手续费</span>
-        </div> -->
         <!-- 金额明细 -->
         <h3 class="box-title">金额明细</h3>
         <div class="box-body">
@@ -272,7 +258,7 @@ const addAddress = () => {
 
 <style scoped lang="scss">
 
-.xtx-pay-checkout-page {
+.jx-pay-checkout-page {
   margin-top: 20px;
 
   .wrapper {
@@ -283,8 +269,9 @@ const addAddress = () => {
       font-size: 16px;
       font-weight: normal;
       padding-left: 10px;
-      line-height: 70px;
+      line-height: 30px;
       border-bottom: 1px solid #f5f5f5;
+      background:linear-gradient(to right,rgb(54, 53, 53),#fff);
     }
 
     .box-body {
@@ -426,7 +413,7 @@ const addAddress = () => {
   dl {
     display: flex;
     justify-content: flex-end;
-    line-height: 50px;
+    line-height: 20px;
 
     dt {
       i {

@@ -1,7 +1,8 @@
 <script setup>
 import { useAddCartStore } from '@/stores/cartStore';
+import { useRouter } from 'vue-router';
 
-
+const router = useRouter()
 const cartStore = useAddCartStore()
 
 const singleCheck =(i,selected) =>{
@@ -16,7 +17,7 @@ const allCheck =(selected) =>{
 </script>
 
 <template>
-  <div class="xtx-cart-page">
+  <div class="jx-cart-page">
     <div class="container m-top-20">
       <div class="cart">
         <table>
@@ -71,7 +72,7 @@ const allCheck =(selected) =>{
               <td colspan="6">
                 <div class="cart-none">
                   <el-empty description="购物车列表为空">
-                    <el-button type="primary">随便逛逛</el-button>
+                    <el-button type="primary" @click="router.push('/')">随便逛逛</el-button>
                   </el-empty>
                 </div>
               </td>
@@ -95,7 +96,7 @@ const allCheck =(selected) =>{
 </template>
 
 <style scoped lang="scss">
-.xtx-cart-page {
+.jx-cart-page {
   margin-top: 20px;
 
   .cart {
@@ -145,7 +146,7 @@ const allCheck =(selected) =>{
       color: $JxColor;
     }
 
-    .xtx-numbox {
+    .jx-numbox {
       margin: 0 auto;
       width: 120px;
     }
@@ -194,7 +195,7 @@ const allCheck =(selected) =>{
     justify-content: space-between;
     padding: 0 30px;
 
-    .xtx-checkbox {
+    .jx-checkbox {
       color: #999;
     }
 

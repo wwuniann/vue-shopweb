@@ -107,7 +107,7 @@ const { bannerList } = useBanner()
     position: relative;
 
     .head {
-      .xtx-more {
+      .jx-more {
         position: absolute;
         top: 20px;
         right: 20px;
