@@ -9,7 +9,6 @@ const { y } = useScroll(window)
   
 <template>
 <div class="app-header-sticky" :class="{ show: y>80 }" >
-    {{ y }}
     <div class="container">
     <RouterLink class="logo" to="/" />
     <!-- 导航区域 -->

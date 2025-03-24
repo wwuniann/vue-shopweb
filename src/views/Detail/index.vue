@@ -2,7 +2,6 @@
 import { getDetailAPI } from '@/apis/detail';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import DetaildHot from './component/DetaildHot.vue';
 import { ElMessage } from 'element-plus';
 import { useAddCartStore } from '@/stores/cartStore';
 import router from '@/router';
@@ -112,32 +111,6 @@ const addCart = () =>{
                 </el-button>
               </div>
 
-            </div>
-          </div>
-          <div class="goods-footer">
-            <div class="goods-article">
-              <!-- 商品详情 -->
-              <div class="goods-tabs">
-                <nav>
-                  <a>商品详情</a>
-                </nav>
-                <div class="goods-detail">
-                  <!-- 属性 -->
-                  <ul class="attrs">
-                    <li v-for="item in goods.details.properties" :key="item.value">
-                      <span class="dt">{{item.name}}</span>
-                      <span class="dd">{{item.value}}</span>
-                    </li>
-                  </ul>
-                  <!-- 图片 -->
-                   <img v-for="i in goods.details.pictures" :src="i" :key="i">
-                </div>
-              </div>
-            </div>
-            <!-- 24热榜+专题推荐 -->
-            <div class="goods-aside">
-                <DetaildHot :hot-type="1" />
-                <DetaildHot :hot-type="2" />
             </div>
           </div>
         </div>

@@ -1,6 +1,8 @@
 //createRouter: 创建router实例对象
 //createWebHistory: 创建history模式的路由
 
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '@/views/Login/index.vue'
 import Layout from '@/views/Layout/index.vue'
@@ -79,10 +81,21 @@ const router = createRouter({
       component: Login
     }
   ],
+
   //设置在不同路由切换时，可以自动滚动到页面顶部，而不是停留再原先的位置
   scrollBehavior(){
     return {top: 0}
   }
 })
+
+// 路由前置守卫，开始加载动画
+router.beforeEach((to, from, next) => {
+  NProgress.start();
+  next();
+});
+// 路由后置守卫，结束加载动画
+router.afterEach(() => {
+  NProgress.done();
+});
 
 export default router

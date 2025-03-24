@@ -16,7 +16,7 @@ onMounted( () => getNewList())
   <HomePanel title="精选好物" subtitle="快来选购！！！">
     <ul class="goods-list">
         <li v-for="item in newList" :key="item.id">
-          <RouterLink :to="`/detail/${item.id}`">
+          <RouterLink :to="`/detail/${item.id}`" >
             <img v-img-lazy="item.picture" alt="" />
             <p class="name">{{ item.name }}</p>
             <p class="price">&yen;{{ item.price }}</p>
@@ -40,6 +40,7 @@ onMounted( () => getNewList())
 
 
 <style scoped lang='scss'>
+
 .goods-list {
   display: flex;
   padding-left: 0px;

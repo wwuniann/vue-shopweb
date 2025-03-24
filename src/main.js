@@ -2,6 +2,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+
+// 配置 nprogress
+NProgress.configure({ showSpinner: false });
+
 
 //测试接口函数
 // import { getaa } from './apis/testAPI'

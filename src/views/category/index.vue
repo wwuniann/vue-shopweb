@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 import GoodsItem from '../Home/components/GoodsItem.vue';
 import { useBanner } from './components/useBanner';
 import { useCategory } from './components/useCategory';
@@ -23,7 +24,7 @@ const { bannerList } = useBanner()
       </div>
       <!-- 轮播图 -->
       <div class="home-banner">
-        <el-carousel height="500px">
+        <el-carousel type="card" :interval="2000" height="500px" >
           <el-carousel-item v-for="item in bannerList" :key="item.id">
             <img :src="item.imgUrl" alt="">
           </el-carousel-item>
