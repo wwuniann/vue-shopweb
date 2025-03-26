@@ -3,7 +3,7 @@
 
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Login from '@/views/Login/index.vue'
 import Layout from '@/views/Layout/index.vue'
 import Home from '@/views/Home/index.vue'
@@ -19,7 +19,7 @@ import UserInfo from '@/views/Member/components/UserInfo.vue'
 import UserOrder from '@/views/Member/components/UserOrder.vue'
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   //path和component（组件）对应关系的位置
   routes: [
     {
