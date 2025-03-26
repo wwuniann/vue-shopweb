@@ -2,7 +2,7 @@
 import { getCategoryFilerAPI } from '@/apis/subcategory';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import GoodsItem from '../Home/components/GoodsItem.vue';
+import GoodsItem from '@/views/Home/components/GoodsItem.vue';
 
 //获取面包屑导航数据
 const route = useRoute()
