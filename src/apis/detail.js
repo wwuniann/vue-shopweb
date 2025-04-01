@@ -1,4 +1,4 @@
-import httpInstance from "@/utils/http";
+import {httpInstance} from "@/utils/http";
 import { linkEmits } from "element-plus";
 
 export function getDetailAPI(id){

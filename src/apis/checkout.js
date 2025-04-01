@@ -1,4 +1,4 @@
-import httpInstance from "@/utils/http";
+import {httpInstance} from "@/utils/http";
 
 //获取接口详情
 export function getCheckout(){

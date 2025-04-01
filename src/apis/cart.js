@@ -1,4 +1,4 @@
-import httpInstance from "@/utils/http";
+import {httpInstance} from "@/utils/http";
 
 //添加购物车
 export function insertCartAPI({ skuId,count}) {

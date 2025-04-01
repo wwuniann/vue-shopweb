@@ -1,4 +1,4 @@
-import httpInstance from "@/utils/http";
+import {httpInstance,local} from "@/utils/http";
 
 export function loginAPI({account,password}){
     return httpInstance({

@@ -1,4 +1,4 @@
-import httpInstance from "@/utils/http"
+import {httpInstance} from "@/utils/http"
 
 export function getCategoryFilerAPI(id){
     return httpInstance({
