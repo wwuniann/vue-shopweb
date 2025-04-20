@@ -18,7 +18,7 @@ const confirm = () =>{
     <div class="container">
       <ul>
         <template v-if="userStore.userInfo.token">
-          <li><a href="javascript:;"><i class="iconfont icon-yonghu"></i>坤坤</a></li>
+          <li><a href="javascript:;" @click="router.push('/User')"><i class="iconfont icon-yonghu"></i>用户留言</a></li>
           <li>
             <el-popconfirm @confirm="confirm" title="确认退出吗?" confirm-button-text="确认" cancel-button-text="取消">
               <template #reference>
@@ -29,6 +29,7 @@ const confirm = () =>{
           <li><a href="javascript:;" @click="router.push('/member/userorder')">我的订单</a></li>
         </template>
         <template v-else>
+          <li><a href="javascript:;" @click="router.push('/User')"><i class="iconfont icon-yonghu"></i>用户留言</a></li>
           <li><a href="javascript:;" @click="router.push('/login')">请先登录</a></li>
         </template>
       </ul>

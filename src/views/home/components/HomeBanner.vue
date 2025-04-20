@@ -1,18 +1,22 @@
 <script setup>
-import { getBannerAPI } from '@/apis/home';
-import { onMounted, ref } from 'vue';
+import { ref, onMounted } from 'vue';
+// 引入本地图片
+import image1 from '@/assets/images/lunbo1.jpg';
+import image2 from '@/assets/images/lunbo2.jpg';
+import image3 from '@/assets/images/lunbo3.jpg';
+import image4 from '@/assets/images/lunbo4.jpg';
 
+const bannerList = ref([
+  { id: 1, imgUrl: image1 },
+  { id: 2, imgUrl: image2 },
+  { id: 3, imgUrl: image3 },
+  { id: 4, imgUrl: image4 }
+]);
 
-const bannerList = ref([])
-const getBanner = async() =>{
-    const res = await getBannerAPI()
-    bannerList.value = res.result
-}
-
-onMounted(() => getBanner())
+onMounted(() => {
+  // 这里不需要再调用 API，因为使用本地图片
+});
 </script>
-
-
 
 <template>
   <div class="home-banner">
@@ -23,8 +27,6 @@ onMounted(() => getBanner())
     </el-carousel>
   </div>
 </template>
-
-
 
 <style scoped lang='scss'>
 .home-banner {
@@ -41,3 +43,4 @@ onMounted(() => getBanner())
   }
 }
 </style>
+    

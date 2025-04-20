@@ -23,13 +23,13 @@ const { bannerList } = useBanner()
         </el-breadcrumb>
       </div>
       <!-- 轮播图 -->
-      <div class="home-banner">
-        <el-carousel type="card" :interval="2000" height="500px" >
-          <el-carousel-item v-for="item in bannerList" :key="item.id">
+      <!-- <div class="home-banner">
+        <el-carousel  :interval="2000" height="500px" >
+          <el-carousel-item v-for="item in bannerList.slice(0,3)" :key="item.id">
             <img :src="item.imgUrl" alt="">
           </el-carousel-item>
         </el-carousel>
-      </div>
+      </div> -->
       <!-- 分类部分 -->
       <div class="sub-list">
         <h3>全部分类</h3>
